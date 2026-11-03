@@ -1,0 +1,124 @@
+{
+  "categories": [
+    { "slug": "documentos-oficiais", "name": "Documentos oficiais", "position": 1 },
+    { "slug": "sintese-e-leitura", "name": "Síntese e leitura de documentos", "position": 2 },
+    { "slug": "planejamento", "name": "Planejamento e acompanhamento", "position": 3 },
+    { "slug": "comunicacao", "name": "Comunicação institucional", "position": 4 },
+    { "slug": "analise-de-dados", "name": "Análise de dados", "position": 5 },
+    { "slug": "verificacao", "name": "Verificação e revisão", "position": 6 }
+  ],
+  "prompts": [
+    {
+      "slug": "oficio-padrao-manual-redacao",
+      "category": "documentos-oficiais",
+      "title": "Ofício no padrão do Manual de Redação",
+      "summary": "Gera um ofício com estrutura, tratamento e fecho conforme o Manual de Redação da Presidência da República.",
+      "access": "free",
+      "tags": ["ofício", "redação oficial"],
+      "variables": [
+        { "key": "remetente", "label": "Remetente (cargo e órgão)", "placeholder": "Secretaria Municipal de Administração", "required": true },
+        { "key": "destinatario", "label": "Destinatário (cargo e órgão)", "placeholder": "Secretário Municipal de Saúde", "required": true },
+        { "key": "assunto", "label": "Assunto", "placeholder": "Solicitação de dados de atendimento", "required": true },
+        { "key": "conteudo", "label": "O que precisa ser dito", "placeholder": "Pedir dados de atendimento do 1º semestre até 30 de março", "required": true }
+      ],
+      "body": "Você é um servidor público experiente em redação oficial.\n\nRedija um ofício seguindo o Manual de Redação da Presidência da República (padrão ofício), com: cabeçalho, número e data em colchetes para eu preencher, destinatário, assunto, vocativo adequado ao cargo, texto em parágrafos numerados e fecho correto.\n\nRemetente: {{remetente}}\nDestinatário: {{destinatario}}\nAssunto: {{assunto}}\nConteúdo: {{conteudo}}\n\nRegras:\n- Linguagem formal, clara e impessoal.\n- Não invente leis, números ou datas. Se precisar de uma referência que eu não informei, deixe entre colchetes.\n- No fim, liste em tópicos o que eu preciso conferir antes de assinar.",
+      "tips": "Peça uma segunda versão mais curta se o ofício passar de uma página."
+    },
+    {
+      "slug": "memorando-interno",
+      "category": "documentos-oficiais",
+      "title": "Memorando interno objetivo",
+      "summary": "Rascunho de memorando entre setores, curto e direto.",
+      "access": "free",
+      "tags": ["memorando", "comunicação interna"],
+      "variables": [
+        { "key": "setor_origem", "label": "Setor de origem", "placeholder": "Diretoria de Compras", "required": true },
+        { "key": "setor_destino", "label": "Setor de destino", "placeholder": "Assessoria Jurídica", "required": true },
+        { "key": "pedido", "label": "O que você precisa", "placeholder": "Parecer sobre a minuta de contrato até sexta-feira", "required": true }
+      ],
+      "body": "Redija um memorando interno do setor {{setor_origem}} para o setor {{setor_destino}}.\n\nPedido: {{pedido}}\n\nO memorando deve ter no máximo 10 linhas, dizer claramente o que se espera do setor de destino e até quando, e terminar com o contato para dúvidas em colchetes. Não invente prazos ou números que eu não informei.",
+      "tips": "Se o assunto for sensível, revise o tom antes de enviar."
+    },
+    {
+      "slug": "resumo-de-processo",
+      "category": "sintese-e-leitura",
+      "title": "Resumo executivo de processo ou documento longo",
+      "summary": "Transforma um documento extenso em um resumo para decisão, com pontos de atenção.",
+      "access": "free",
+      "tags": ["resumo", "processo", "NotebookLM"],
+      "variables": [
+        { "key": "tipo_documento", "label": "Tipo de documento", "placeholder": "Processo de contratação de serviços de limpeza", "required": true },
+        { "key": "decisao", "label": "Que decisão você precisa tomar", "placeholder": "Aprovar ou não a prorrogação do contrato", "required": true }
+      ],
+      "body": "Vou anexar ou colar um documento: {{tipo_documento}}.\n\nPreciso decidir: {{decisao}}.\n\nFaça um resumo executivo com:\n1. Do que se trata (3 linhas)\n2. Fatos principais, com a página ou trecho de onde saiu cada um\n3. Pontos de atenção e riscos\n4. O que está faltando no documento para eu decidir\n\nUse apenas o que está no documento. Se algo não estiver claro, diga que não está claro em vez de supor.",
+      "tips": "Funciona melhor no NotebookLM, que mostra a fonte de cada afirmação. Retire dados pessoais antes de anexar."
+    },
+    {
+      "slug": "plano-de-acao-com-cronograma",
+      "category": "planejamento",
+      "title": "Plano de ação com cronograma",
+      "summary": "Monta um plano de ação com etapas, responsáveis, prazos e indicadores.",
+      "access": "free",
+      "tags": ["plano de ação", "cronograma", "5W2H"],
+      "variables": [
+        { "key": "objetivo", "label": "Objetivo", "placeholder": "Reduzir em 30% o tempo de resposta às demandas da ouvidoria", "required": true },
+        { "key": "prazo", "label": "Prazo total", "placeholder": "6 meses", "required": true },
+        { "key": "equipe", "label": "Equipe disponível", "placeholder": "1 coordenador e 4 servidores", "required": false }
+      ],
+      "body": "Monte um plano de ação para o objetivo: {{objetivo}}.\nPrazo total: {{prazo}}.\nEquipe disponível: {{equipe}}.\n\nEntregue uma tabela com: etapa, o que fazer, responsável (por função, não por nome), início, fim, entrega e indicador de acompanhamento. Depois, liste os 3 principais riscos do plano e como reduzi-los. Seja realista com a equipe informada.",
+      "tips": "Peça para converter a tabela em formato de planilha se for usar no Excel ou no Google Planilhas."
+    },
+    {
+      "slug": "simplificar-linguagem",
+      "category": "comunicacao",
+      "title": "Texto em linguagem simples para o cidadão",
+      "summary": "Reescreve um texto técnico em linguagem simples, sem perder a precisão.",
+      "access": "premium",
+      "tags": ["linguagem simples", "cidadão"],
+      "variables": [
+        { "key": "publico", "label": "Para quem é o texto", "placeholder": "Moradores que vão solicitar o benefício", "required": true }
+      ],
+      "body": "Reescreva o texto que vou colar em linguagem simples para: {{publico}}.\n\nRegras:\n- Frases curtas e na ordem direta.\n- Troque termos técnicos por palavras do dia a dia; se o termo for necessário, explique entre parênteses.\n- Mantenha todos os prazos, valores e exigências exatamente como estão.\n- No fim, liste as mudanças de sentido que você precisou fazer, se houver.",
+      "tips": "Confira prazos e valores no texto final antes de publicar."
+    },
+    {
+      "slug": "analise-de-tabela",
+      "category": "analise-de-dados",
+      "title": "Leitura de tabela ou planilha simples",
+      "summary": "Ajuda a interpretar uma tabela de indicadores, com cuidado na conferência dos números.",
+      "access": "premium",
+      "tags": ["dados", "planilha", "indicadores"],
+      "variables": [
+        { "key": "contexto", "label": "O que a tabela mostra", "placeholder": "Execução orçamentária por secretaria no 1º semestre", "required": true },
+        { "key": "pergunta", "label": "O que você quer saber", "placeholder": "Quais secretarias estão abaixo de 40% de execução", "required": true }
+      ],
+      "body": "Vou colar uma tabela: {{contexto}}.\n\nPergunta: {{pergunta}}\n\n1. Responda à pergunta mostrando o cálculo de cada número.\n2. Aponte valores que parecem estranhos ou inconsistentes.\n3. Sugira 2 perguntas que eu deveria fazer à equipe responsável pelos dados.\n\nNão arredonde sem avisar e não use números que não estejam na tabela.",
+      "tips": "Confira por amostra pelo menos 3 números calculados pela IA."
+    },
+    {
+      "slug": "checagem-de-afirmacoes",
+      "category": "verificacao",
+      "title": "Checagem das afirmações de um texto gerado por IA",
+      "summary": "Lista o que precisa ser verificado antes de usar um texto produzido por IA.",
+      "access": "free",
+      "tags": ["revisão", "alucinação", "verificação"],
+      "variables": [],
+      "body": "Vou colar um texto produzido por IA que pretendo usar em um documento oficial.\n\nListe, em uma tabela, cada afirmação que precisa ser verificada: leis e normas citadas, números, datas, nomes de órgãos e programas. Para cada uma, indique o risco se estiver errada (alto, médio ou baixo) e onde eu posso conferir.\n\nNão corrija o texto; apenas aponte o que conferir.",
+      "tips": "Use em uma conversa nova, separada da que gerou o texto."
+    },
+    {
+      "slug": "pauta-de-reuniao",
+      "category": "planejamento",
+      "title": "Pauta e ata de reunião",
+      "summary": "Prepara a pauta antes da reunião e organiza as anotações em ata depois.",
+      "access": "premium",
+      "tags": ["reunião", "ata", "pauta"],
+      "variables": [
+        { "key": "tema", "label": "Tema da reunião", "placeholder": "Planejamento das ações de dezembro", "required": true },
+        { "key": "duracao", "label": "Duração", "placeholder": "1 hora", "required": true }
+      ],
+      "body": "Parte 1 — Pauta\nMonte a pauta de uma reunião sobre {{tema}}, com duração de {{duracao}}: itens, tempo de cada um, quem conduz (por função) e a decisão esperada em cada item.\n\nParte 2 — Ata\nQuando eu colar minhas anotações, organize em ata: decisões tomadas, encaminhamentos com responsável e prazo, e pendências. Use apenas o que estiver nas anotações.",
+      "tips": "Retire nomes e dados pessoais das anotações antes de colar."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "template": {
+    "slug": "maturidade-dados-ia",
+    "version": 1,
+    "title": "Diagnóstico de Maturidade em Dados e IA",
+    "published": true
+  },
+  "scale": [
+    { "value": 1, "label": "Não existe ou não acontece" },
+    { "value": 2, "label": "Existem iniciativas isoladas" },
+    { "value": 3, "label": "Existe, mas de forma parcial" },
+    { "value": 4, "label": "Existe e é aplicado na maior parte do órgão" },
+    { "value": 5, "label": "Está consolidado e é acompanhado" },
+    { "value": null, "label": "Não sei avaliar" }
+  ],
+  "dimensions": [
+    {
+      "code": "EST",
+      "name": "Estratégia e liderança",
+      "description": "Objetivos, responsáveis, recursos e acompanhamento das iniciativas de dados e IA.",
+      "position": 1,
+      "questions": [
+        { "code": "EST-01", "statement": "A liderança do órgão definiu objetivos para o uso de dados e IA ligados às prioridades da gestão." },
+        { "code": "EST-02", "statement": "Há uma pessoa ou equipe responsável por coordenar as iniciativas de dados e IA." },
+        { "code": "EST-03", "statement": "Existe orçamento ou previsão de recursos para iniciativas de dados e IA." },
+        { "code": "EST-04", "statement": "Os resultados das iniciativas de dados e IA são acompanhados com indicadores." }
+      ],
+      "recommendations": {
+        "baixo": { "title": "Defina um responsável e um primeiro objetivo", "body": "Indique uma pessoa para coordenar o tema e escolha um objetivo concreto para os próximos 90 dias, ligado a uma prioridade da gestão (por exemplo, reduzir o tempo de resposta a ofícios)." },
+        "medio": { "title": "Transforme iniciativas em plano", "body": "Reúna as iniciativas existentes em um plano anual com metas, responsáveis e recursos previstos, e apresente o andamento à liderança a cada trimestre." },
+        "alto": { "title": "Acompanhe resultado, não só atividade", "body": "Mantenha indicadores de efeito (tempo economizado, qualidade, retrabalho) e use o diagnóstico semestral para decidir onde investir." }
+      }
+    },
+    {
+      "code": "GOV",
+      "name": "Governança, ética e LGPD",
+      "description": "Regras de uso, proteção de dados pessoais e revisão humana do que a IA produz.",
+      "position": 2,
+      "questions": [
+        { "code": "GOV-01", "statement": "Existe orientação formal sobre o uso de ferramentas de IA generativa pelos servidores." },
+        { "code": "GOV-02", "statement": "Os servidores sabem quais informações não podem ser inseridas em ferramentas públicas de IA." },
+        { "code": "GOV-03", "statement": "Há revisão humana obrigatória antes de usar conteúdo gerado por IA em documentos oficiais." },
+        { "code": "GOV-04", "statement": "O órgão tem encarregado de dados atuante e processos de adequação à LGPD." }
+      ],
+      "recommendations": {
+        "baixo": { "title": "Publique uma orientação de uso em uma página", "body": "Comece por uma orientação curta: o que nunca inserir em ferramentas públicas (dados pessoais, informações sigilosas, credenciais), a obrigação de revisão humana e a quem recorrer em caso de dúvida." },
+        "medio": { "title": "Faça a regra chegar a todos", "body": "Divulgue a orientação em todos os setores, inclua o tema na integração de novos servidores e defina um fluxo para avaliar novas ferramentas antes do uso." },
+        "alto": { "title": "Revise a governança periodicamente", "body": "Revise a orientação a cada semestre, registre incidentes e aprendizados e alinhe com o encarregado de dados as novas formas de uso." }
+      }
+    },
+    {
+      "code": "DAD",
+      "name": "Dados",
+      "description": "Disponibilidade, qualidade, integração e abertura dos dados do órgão.",
+      "position": 3,
+      "questions": [
+        { "code": "DAD-01", "statement": "Os dados de que minha área precisa estão digitalizados e são fáceis de acessar." },
+        { "code": "DAD-02", "statement": "Os dados têm qualidade confiável: estão completos, atualizados e sem duplicidade." },
+        { "code": "DAD-03", "statement": "Existem bases ou painéis de dados compartilhados entre os setores." },
+        { "code": "DAD-04", "statement": "O órgão publica dados abertos com regularidade." }
+      ],
+      "recommendations": {
+        "baixo": { "title": "Mapeie os dados mais usados", "body": "Liste as 5 bases de dados mais usadas nas decisões do órgão, quem é responsável por cada uma e onde estão. Priorize digitalizar o que ainda está em papel ou em planilhas soltas." },
+        "medio": { "title": "Cuide da qualidade e do compartilhamento", "body": "Defina responsáveis pela atualização de cada base, crie um painel compartilhado com os principais indicadores e corrija duplicidades nas bases mais críticas." },
+        "alto": { "title": "Use os dados para decidir e prestar contas", "body": "Integre as bases entre setores, publique dados abertos em formato legível por máquina e use os indicadores nas reuniões de gestão." }
+      }
+    },
+    {
+      "code": "PES",
+      "name": "Pessoas e competências",
+      "description": "Capacitação, senso crítico e segurança da equipe para usar dados e IA.",
+      "position": 4,
+      "questions": [
+        { "code": "PES-01", "statement": "Os servidores receberam capacitação sobre o uso de IA no trabalho." },
+        { "code": "PES-02", "statement": "Os gestores sabem avaliar criticamente respostas geradas por IA e identificar erros ou informações inventadas." },
+        { "code": "PES-03", "statement": "Há pessoas na equipe capazes de analisar dados e construir indicadores." },
+        { "code": "PES-04", "statement": "A equipe se sente segura para experimentar IA no trabalho, dentro das regras." }
+      ],
+      "recommendations": {
+        "baixo": { "title": "Comece pelo letramento básico", "body": "Ofereça uma capacitação curta e prática para gestores e equipe, com foco em uso seguro, revisão de respostas e exemplos da rotina do órgão." },
+        "medio": { "title": "Forme multiplicadores", "body": "Identifique de 2 a 5 servidores interessados em cada setor para apoiar os colegas, compartilhar exemplos e coletar dúvidas." },
+        "alto": { "title": "Mantenha a formação contínua", "body": "Crie uma trilha permanente, com encontros periódicos para trocar casos de uso e atualizar a equipe sobre novas ferramentas e riscos." }
+      }
+    },
+    {
+      "code": "USO",
+      "name": "Processos e uso",
+      "description": "Uso real de IA nas tarefas do dia a dia e projetos com resultado medido.",
+      "position": 5,
+      "questions": [
+        { "code": "USO-01", "statement": "A IA já é usada em tarefas rotineiras, como redação, resumo e pesquisa." },
+        { "code": "USO-02", "statement": "Existem modelos de prompt ou boas práticas de uso compartilhados pela equipe." },
+        { "code": "USO-03", "statement": "Os processos de maior volume foram mapeados como candidatos ao uso de IA." },
+        { "code": "USO-04", "statement": "Há pelo menos um projeto de IA em piloto ou em funcionamento com resultado medido." }
+      ],
+      "recommendations": {
+        "baixo": { "title": "Escolha uma tarefa e teste", "body": "Escolha uma tarefa repetitiva e de baixo risco (resumo de documentos, rascunho de ofícios) e faça um teste de 30 dias, comparando tempo e qualidade antes e depois." },
+        "medio": { "title": "Padronize o que funcionou", "body": "Transforme os usos que deram certo em modelos de prompt compartilhados e mapeie os processos de maior volume para escolher os próximos pilotos." },
+        "alto": { "title": "Escale com medição", "body": "Leve os pilotos bem-sucedidos para outros setores, mantenha a medição de resultado e documente os fluxos para novos servidores." }
+      }
+    },
+    {
+      "code": "INF",
+      "name": "Infraestrutura e ferramentas",
+      "description": "Acesso a ferramentas, conectividade, sistemas e apoio da área de TI.",
+      "position": 6,
+      "questions": [
+        { "code": "INF-01", "statement": "Os servidores têm acesso institucional a ferramentas de IA." },
+        { "code": "INF-02", "statement": "A internet e os equipamentos permitem usar essas ferramentas no dia a dia." },
+        { "code": "INF-03", "statement": "Os sistemas do órgão permitem extrair ou integrar dados com facilidade." },
+        { "code": "INF-04", "statement": "A área de TI apoia a adoção de novas ferramentas com segurança." }
+      ],
+      "recommendations": {
+        "baixo": { "title": "Garanta o básico de acesso", "body": "Verifique conectividade e equipamentos dos setores prioritários e defina quais ferramentas gratuitas podem ser usadas enquanto não há solução institucional." },
+        "medio": { "title": "Avalie uma ferramenta institucional", "body": "Envolva a TI na avaliação de uma ferramenta de IA com contrato e proteção de dados adequados, e planeje a extração de dados dos sistemas principais." },
+        "alto": { "title": "Integre ferramentas e sistemas", "body": "Integre a IA aos sistemas do órgão com controle de acesso e registro de uso, e acompanhe custos e segurança com a TI." }
+      }
+    }
+  ]
+}

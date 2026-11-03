@@ -1,0 +1,29 @@
+# Dependências
+node_modules/
+
+# Build do Next.js
+.next/
+out/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# Segredos: nunca versionar
+.env
+.env.*
+!.env.example
+
+# Supabase local
+supabase/.branches/
+supabase/.temp/
+
+# Vercel
+.vercel/
+
+# Testes
+coverage/
+
+# Logs e sistema
+*.log
+.DS_Store
+Thumbs.db
